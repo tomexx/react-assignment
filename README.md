@@ -25,7 +25,7 @@ yarn cypress run --browser firefox
 
 ## Example usage
 
-```typescript
+```tsx
 import {
   ToastHolder,
   ToastProvider,
