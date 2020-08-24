@@ -1,5 +1,7 @@
 ## Demo
 
+[react-assignment.vercel.app](https://react-assignment.vercel.app/)
+
 ## Installation
 
 ```
@@ -23,8 +25,12 @@ yarn cypress run --browser firefox
 
 ## Example usage
 
-```
-import { ToastHolder, ToastProvider, useToastDispatch } from '@/components/Toast';
+```typescript
+import {
+  ToastHolder,
+  ToastProvider,
+  useToastDispatch,
+} from '@/components/Toast';
 
 const steps: Step[] = [
   {
@@ -33,34 +39,22 @@ const steps: Step[] = [
   {
     text: `Thank you`,
   },
-]
+];
 
 const ToastControls: React.FC<{}> = () => {
   const dispatch = useToastDispatch();
   return (
     <StyledToastControls>
-      <button
-        type="button"
-        onClick={() => dispatch({ type: `show` })}
-      >
+      <button type="button" onClick={() => dispatch({ type: `show` })}>
         Initialize / show Toast instance
       </button>
-      <button
-        type="button"
-        onClick={() => dispatch({ type: `previous` })}
-      >
+      <button type="button" onClick={() => dispatch({ type: `previous` })}>
         Previous step
       </button>
-      <button
-        type="button"
-        onClick={() => dispatch({ type: `next` })}
-      >
+      <button type="button" onClick={() => dispatch({ type: `next` })}>
         Next step
       </button>
-      <button
-        type="button"
-        onClick={() => dispatch({ type: `close` })}
-      >
+      <button type="button" onClick={() => dispatch({ type: `close` })}>
         Close Toast instance
       </button>
     </StyledToastControls>
@@ -70,5 +64,5 @@ const ToastControls: React.FC<{}> = () => {
 <ToastProvider steps={steps}>
   <ToastControls />
   <ToastHolder />
-</ToastProvider>
+</ToastProvider>;
 ```
